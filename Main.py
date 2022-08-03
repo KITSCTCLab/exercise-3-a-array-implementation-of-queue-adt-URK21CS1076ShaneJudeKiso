@@ -10,7 +10,7 @@ class Solution:
       """
 
     # Write your code here
-    def __init__(self, size):
+    def _init_(self, size):
         """Inits Solution with stack, queue, size, top, front and rear.
         Arguments:
           size: An integer to set the size of stack and queue.
@@ -44,7 +44,7 @@ class Solution:
         Returns:
           True if it is full, else returns False.
         """
-        return self.top == self.size -1
+        return self.top == self.size - 1
 
     def is_queue_full(self):
         """
@@ -52,7 +52,7 @@ class Solution:
         Returns:
           True if it is full, else returns False.
         """
-        return self.rear == self.size -1
+        return self.rear == self.size - 1
 
     def push_character(self, character):
         """
@@ -71,8 +71,8 @@ class Solution:
             character: A character that will be enqueued to queue.
         """
         if not self.is_queue_full():
-            if self.front == -1
-               self.front = 0
+            if  self.front == -1:
+                self.front = 0
             self.rear += 1
             self.queue.append(character)
 
@@ -82,7 +82,7 @@ class Solution:
         Returns:
           The data that is popped out if the stack is not empty.
         """
-         if not self.is_stack_empty():
+        if not self.is_stack_empty():
             self.top -= 1
             return self.stack.pop(self.top + 1)
 
@@ -92,9 +92,10 @@ class Solution:
         Returns:
           The data that is dequeued if the queue is not empty.
         """
-         if not self.is_queue_empty():
-           self.front += 1
-           return self.queue[self.front - 1]
+        if not self.is_queue_empty():
+            self.front += 1
+            return self.queue[self.front - 1] 
+                
 
 
 # read the string text
@@ -118,7 +119,9 @@ dequeue the first character from queue
 compare both characters
 If the comparison fails, set is_palindrome as False.
 '''
-# Write the necessary logic
+for index in range(length_of_text):
+    if solution.pop_character() != solution.dequeue_character():
+        is_palindrome = False
 
 
 # finally print whether string text is palindrome or not.
